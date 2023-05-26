@@ -1,0 +1,141 @@
+{
+  "id": "4b985142-356c-40ab-950d-d1e2a2dc1fe5",
+  "version": "2.0",
+  "name": "Test2",
+  "url": "https://fld.mn",
+  "tests": [{
+    "id": "d9fb978c-76ac-4248-94fa-a64e5ebb7e99",
+    "name": "Test1",
+    "commands": [{
+      "id": "999850f0-a40c-4be3-97d8-eb674f96607d",
+      "comment": "",
+      "command": "open",
+      "target": "/zhaw/dop/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9753eab0-84cd-47f7-89bf-74402f581dbb",
+      "comment": "Lieblingsfach eingeben",
+      "command": "type",
+      "target": "name=subject",
+      "targets": [
+        ["name=subject", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='subject']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "DevOps"
+    }, {
+      "id": "c1e9fe6f-9ebe-41a1-acce-28e6abbc621a",
+      "comment": "Wie gut auf 5 setzen",
+      "command": "click",
+      "target": "css=input:nth-child(8)",
+      "targets": [
+        ["css=input:nth-child(8)", "css:finder"],
+        ["xpath=(//input[@name='devops'])[5]", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "78fc7589-d8ee-43ed-9ccb-6f1f40a73883",
+      "comment": "Verbesserung der Zusammenarbeit anwählen",
+      "command": "click",
+      "target": "css=input:nth-child(11)",
+      "targets": [
+        ["css=input:nth-child(11)", "css:finder"],
+        ["xpath=(//input[@name='reasons[]'])[2]", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "11922176-1e07-4b06-97c0-a2dc76e655a8",
+      "comment": "Schnelle Lieferung anwählen",
+      "command": "click",
+      "target": "css=input:nth-child(12)",
+      "targets": [
+        ["css=input:nth-child(12)", "css:finder"],
+        ["xpath=(//input[@name='reasons[]'])[3]", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9fd998cb-eb78-4f97-84de-9e17f8cfb9e2",
+      "comment": "Submit drücken",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f6bd100e-c665-4fd4-adda-f52ceef499d9",
+      "comment": "Warten bis Seite neu geladen",
+      "command": "waitForElementVisible",
+      "target": "name=subject",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "5f432242-3f12-4c15-a3fe-2b77191acf37",
+      "comment": "Resultat: Lieblingsfach überprüfen",
+      "command": "assertText",
+      "target": "css=p:nth-child(2) > span",
+      "targets": [],
+      "value": "DevOps"
+    }, {
+      "id": "f8d160de-614a-4153-b051-c1a883f84abd",
+      "comment": "Resultat DevOps-Rating überprüfen",
+      "command": "assertText",
+      "target": "id=WieGut",
+      "targets": [],
+      "value": "5"
+    }, {
+      "id": "6a72c7f7-8102-403e-b371-965918793371",
+      "comment": "Verifizieren, dass Verbesserung der Zusammenarbeit erscheint",
+      "command": "assertText",
+      "target": "css=li:nth-child(1)",
+      "targets": [],
+      "value": "Verbesserung der Zusammenarbeit"
+    }, {
+      "id": "1c3c0ecd-2539-4f02-b89d-fc75983768b1",
+      "comment": "Verifizieren, dass \"Praktische Anwendbarkeit\" nicht checked ist",
+      "command": "verifyNotChecked",
+      "target": "css=input:nth-child(10)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "db06db31-fa6f-45f4-814f-41cffd5ea9ed",
+      "comment": "Sicherstellen, dass der Radio-Button auf der Seite vorhanden ist.",
+      "command": "verifyElementPresent",
+      "target": "css=input:nth-child(5)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "98b75d0c-ff44-4c42-bd85-4378832e4186",
+      "comment": "Verifizieren, dass das Lieblingsfach eingegeben werden kann",
+      "command": "verifyEditable",
+      "target": "name=subject",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "41787d49-7482-4bb4-9c03-e0d9a2d2d119",
+      "comment": "Verifizieren, dass Schnelle Lieferung erscheint",
+      "command": "assertText",
+      "target": "css=li:nth-child(2)",
+      "targets": [],
+      "value": "Schnelle Lieferung"
+    }]
+  }],
+  "suites": [{
+    "id": "1bf3da4f-30af-49f6-b4b4-1550db4e99b3",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["d9fb978c-76ac-4248-94fa-a64e5ebb7e99"]
+  }],
+  "urls": ["https://fld.mn/"],
+  "plugins": []
+}
